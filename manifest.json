@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Matchify",
+    "description": "Bring a song from Sirius XM to Spotify in one click!",
+    "version": "0.0.1",
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": "assets/logo.png"
+    },
+    "icons":{
+      "128": "assets/logo.png"
+    },
+    "permissions": ["scripting", "activeTab", "tabs"],
+    "host_permissions": ["https://accounts.spotify.com/*", "https://api.spotify.com/*", "https://open.spotify.com/*"],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'; frame-src https://open.spotify.com"
+    },
+    "content_scripts": [
+    {
+    "js": ["scripts/content.js"],
+    "run_at": "document_start",
+    "matches": [
+        "https://www.siriusxm.com/player/*"
+    ],
+    "all_frames": true
+}
+]
+}

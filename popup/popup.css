@@ -1,0 +1,86 @@
+.body-style{
+    width: 20em;
+    height:15em;
+    background-color: rgb(25, 20, 18);
+    font-family: 'helvetica neue', 'sans-serif';
+    color:#ffffff;
+}
+
+.buttons{
+    color: rgb(25, 20, 18);
+    background-color: rgb(30, 215, 96);
+    border-style:none;
+    border-radius:12px;
+    font-weight:550;
+}
+
+.button-list{
+    list-style: none;
+}
+
+.list-container{
+    overflow-y:auto; 
+    overflow-x:hidden;
+    max-height: 200px; 
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+  }
+  
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(119, 119, 119, 0.7);
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.matches-list{
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    clear:left;
+}
+
+.matches-node{
+    overflow: auto; 
+    display: block;
+    width:100%;
+    cursor:pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.matches-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.matches-node p {
+    margin: 0; 
+    padding: 11px; 
+}
+
+.matches-node:hover{
+    background-color: #454545;
+    transition:background-color 0.5s;
+}
+.matches-node:hover *{
+    background-color: #454545;
+    transition:background-color 0.5s;
+}
+
+.matches-node:active {
+    transform: scale(0.9);
+}
+
+.matches-node.clicked {
+    animation: scaleEffect 0.4s ease-in-out;
+}
+
+@keyframes scaleEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
